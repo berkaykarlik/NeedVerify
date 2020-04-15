@@ -1,15 +1,26 @@
+/* eslint-disable */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import ElementUI from 'element-ui';
 import Vue from 'vue'
-import App from './App'
-import router from './router'
+import Register from './components/Register'
 
+Vue.use(ElementUI)
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
+const routes = {
+  '/': Register
+}
+
 new Vue({
   el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+  data: {
+    currentRoute: window.location.pathname
+  },
+  computed: {
+    ViewComponent () {
+      return routes[this.currentRoute]
+    }
+  },
+  render (h) { return h(this.ViewComponent) }
 })
