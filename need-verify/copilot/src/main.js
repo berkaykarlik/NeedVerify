@@ -6,28 +6,31 @@ import 'element-ui/lib/theme-chalk/display.css'
 import locale from 'element-ui/lib/locale/lang/en'
 import ElementUI from 'element-ui'
 import NeedVerifyVueExtensions from './util/NeedVerifyVueExtensions'
-import Register from './components/Register'
+import RegisterView from './components/Register.vue'
+import routes from '../routes'
 import Vue from 'vue'
 import VueResource from "vue-resource"
+import VueRouter from 'vue-router'
 
 Vue.use(ElementUI, { locale })
 Vue.use(VueResource);
+Vue.use(VueRouter);
 Vue.use(NeedVerifyVueExtensions) // Global mixin to extend Vue instance
 Vue.config.productionTip = false
 
-const routes = {
-  '/': Register
-}
+const router = new VueRouter({
+  routes: routes,
+  mode: 'history',
+  scrollBehavior: function (to, from, savedPosition) {
+    return savedPosition || { x: 0, y: 0 }
+  }
+})
 
 new Vue({
   el: '#app',
   data: {
     currentRoute: window.location.pathname
   },
-  computed: {
-    ViewComponent () {
-      return routes[this.currentRoute]
-    }
-  },
-  render (h) { return h(this.ViewComponent) }
+  router,
+  render: h => h(RegisterView)
 })
