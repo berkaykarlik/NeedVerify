@@ -3,7 +3,7 @@
 const api = require('./NeedVerifyApiClient.js')
 
 const API_ROOT = '/api'
-const API_ENDPOINT_ACCOUNT = API_ROOT + '/accounts'
+const API_ENDPOINT_ACCOUNT = API_ROOT + '/user'
 
 module.exports = {
   mixins: [api],
