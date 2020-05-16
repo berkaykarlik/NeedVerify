@@ -7,22 +7,22 @@
       fixed
       prop="schoolName"
       label="School"
-      width="20%">
+      width="%20">
     </el-table-column>
     <el-table-column
       prop="facultyName"
       label="Faculty"
-      width="20%">
+      width="%20">
     </el-table-column>
     <el-table-column
       prop="departmentName"
       label="Department"
-      width="20%">
+      width="%20">
     </el-table-column>
     <el-table-column
       prop="yearOfGrad"
       label="Graduation Year"
-      width="20%">
+      width="%20">
     </el-table-column>
   </el-table>
 </template>
