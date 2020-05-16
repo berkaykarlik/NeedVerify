@@ -22,19 +22,19 @@ function createAccount({ username, email, password, firstName, lastName, type })
   });
 }
 
-function getAccountWithAccountId (accountId) {
+function getAccountWithUserId (userId) {
   return new Promise(function (resolve, reject) {
-    Account.find({ accountId }).exec(function (err, account) {
+    Account.find({ userId }).exec(function (err, user) {
       if (err) {
         return reject(err);
       }
-      if (!account) {
-        return reject('Account is not found');
+      if (!user) {
+        return reject('User is not found');
       }
-      resolve(account);
+      resolve(user);
     });
   });
 }
 
 exports.createAccount = createAccount;
-exports.getAccountWithAccountId = getAccountWithAccountId;
+exports.getAccountWithUserId = getAccountWithUserId;
