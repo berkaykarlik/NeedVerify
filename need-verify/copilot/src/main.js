@@ -8,6 +8,7 @@ import ElementUI from 'element-ui'
 import NeedVerifyVueExtensions from './util/NeedVerifyVueExtensions'
 import Register from './components/Register'
 import UserDiploma from './components/UserDiploma'
+import UserMainView from './components/UserMainView'
 import Vue from 'vue'
 import VueResource from "vue-resource"
 
@@ -18,7 +19,8 @@ Vue.config.productionTip = false
 
 const routes = {
   '/': Register,
-  '/diploma/:userId': UserDiploma
+  '/diploma/:userId': UserDiploma,
+  '/:userId': UserMainView,
 }
 
 new Vue({

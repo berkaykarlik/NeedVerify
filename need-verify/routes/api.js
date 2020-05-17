@@ -16,4 +16,4 @@ const authRoutes = express.Router();
 // =========================
 
 // Create a new account
-authRoutes.route("/api/accounts").post(authController.register);
+authRoutes.route("/accounts").post(authController.register);
