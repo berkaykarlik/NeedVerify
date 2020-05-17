@@ -1,5 +1,5 @@
 const authController = require("../controllers/auth");
-const diplomaController = require("../controllers/diploma");
+const diplomaController = require("../controllers/diplomaController");
 const express = require("express");
 
 // eslint-disable-next-line new-cap
