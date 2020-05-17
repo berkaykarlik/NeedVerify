@@ -1,9 +1,41 @@
 <template>
-  <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
-    <el-button v-on:click="handleCreateNotaryDocButtonClick"  type="primary" plain>Create Notary Document</el-button>
-    <el-button v-on:click="handleMyNotaryDocsButtonClick"  type="primary" plain>My Notary Documents</el-button>
-    <el-button v-on:click="handleApproveDocsButtonClick"  type="primary" plain>Approve Documents</el-button>
-  </el-col>
+  <el-container>
+    <el-aside >
+      <el-button   v-on:click="handleCreateNotaryDocButtonClick"  type="primary" plain>Create Notary Document</el-button>
+    </el-aside>
+    <el-main>
+    <el-header>My Notary Documents</el-header>
+    <el-table
+      :data="notarydocs"
+      style="width: 100%"
+      max-height="250">
+      <el-table-column
+        fixed
+        prop="Document Type"
+        label="Document Type"
+        width="%20">
+      </el-table-column>
+      <el-table-column
+        prop="Date Created"
+        label="Date Created"
+        width="%20">
+      </el-table-column>
+      <el-table-column
+        prop="People Approved"
+        label="People Approved"
+        width="%20">
+      </el-table-column>
+      <el-table-column
+        label="Operations">
+        <template slot-scope="scope">
+          <el-button
+            size="mini"
+            @click="handleApprove(scope.$index, scope.row)">Approve</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+    </el-main>
+  </el-container>
 </template>
 
 <script src="../assets/js/UserNotaryDocPage.js"></script>

@@ -1,5 +1,6 @@
 const authController = require("../controllers/auth");
-const diplomaController = require("../controllers/diploma");
+const diplomaController = require("../controllers/diplomaController");
+const notarydocController = require("../controllers/notarydocController");
 const express = require("express");
 
 // eslint-disable-next-line new-cap
@@ -9,7 +10,7 @@ apiRouter.route("/diploma/:user_id")
     .get(diplomaController.getAllDiplomasByUserId);
 
 apiRouter.route("/notarydoc/:user_id")
-    .get(diplomaController.getAllDocumentsByUserId);
+    .get(notarydocController.getAllDocumentsByUserId);
 
 // eslint-disable-next-line new-cap
 const authRoutes = express.Router();
