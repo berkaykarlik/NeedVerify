@@ -7,22 +7,22 @@
       fixed
       prop="certificateName"
       label="Certificate"
-      width="20%">
+      width="%20">
     </el-table-column>
     <el-table-column
       prop="institutionName"
       label="Institution"
-      width="20%">
+      width="%20">
     </el-table-column>
     <el-table-column
       prop="periodOfValidity"
       label="Validity Period"
-      width="20%">
+      width="%20">
     </el-table-column>
     <el-table-column
       prop="issueDate"
       label="Issue Date"
-      width="20%">
+      width="%20">
     </el-table-column>
   </el-table>
 </template>
