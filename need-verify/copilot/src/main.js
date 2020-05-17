@@ -20,7 +20,7 @@ Vue.config.productionTip = false
 const routes = {
   '/': Register,
   '/diploma/:userId': UserDiploma,
-  '/UserNotaryDocPage': UserNotaryDocPage
+  '/notary/:userId': UserNotaryDocPage
 }
 
 new Vue({
