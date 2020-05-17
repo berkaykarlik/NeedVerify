@@ -8,6 +8,8 @@ import ElementUI from 'element-ui'
 import NeedVerifyVueExtensions from './util/NeedVerifyVueExtensions'
 import Register from './components/Register'
 import UserDiploma from './components/UserDiploma'
+import CreatorDiploma from './components/CreatorDiploma'
+import CreateDiplomaInstance from './components/CreateDiplomaInstance'
 import Vue from 'vue'
 import VueResource from "vue-resource"
 
@@ -18,7 +20,9 @@ Vue.config.productionTip = false
 
 const routes = {
   '/': Register,
-  '/diploma/:userId': UserDiploma
+  '/diploma/:userId': UserDiploma,
+  '/creatorDiploma/:creatorId': CreatorDiploma,
+  '/createDiplomaInstance/:creatorId': CreateDiplomaInstance
 }
 
 new Vue({
