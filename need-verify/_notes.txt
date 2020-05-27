@@ -1,0 +1,85 @@
+// USER OBJECT
+var userObject = JSON.parse(localStorage.getItem("userObject"));
+
+//CLEAR CACHE
+npm cache clean --force
+
+
+// DIALOG
+this.$vs.dialog({
+    color: this.colorAlert,
+    title: "İşlem Başarılı",
+    text: "Şifreniz başarıyla yenilendi.",
+    accept: () => {
+        this.$router.push("/profile").catch(() => {});
+    },
+    acceptText: "Uygulamaya Dön"
+});
+
+// Notifications 
+this.$vs.notify({
+title:'Primary',
+text:'Lorem ipsum dolor sit amet, consectetur',
+color:'primary', // success - danger - warning - dark
+position:'top-right'
+})
+
+this.$vs.notify({
+title:'Uyarı',
+text:'E-Posta adresiniz onaylanmadı!',
+color:'warning', 
+position:'top-right'
+})
+
+// SÜRE FARKI ALMA
+var startDate = new Date();
+// Do your operations
+var endDate   = new Date();
+var seconds = (endDate.getTime() - startDate.getTime()) / 1000;
+
+// TEMEL KADRO MU?
+isBasicCadre(profession){
+    return profession == "ANATOMİ" || profession == "FİZYOLOJİ" || profession == "HİSTOLOJİ VE EMBRİYOLOJİ" || profession == "TIBBİ MİKROBİYOLOJİ" 
+    || profession == "TIBBİ BİYOKİMYA" || profession == "TIBBİ FARMAKOLOJİ"; 
+}
+
+// resolve() Promise içerisinde return sağlıyor
+registerUser({ commit }, payload) {
+        if (payload == null) { // kullanılmadı uyarısı için
+            commit();
+        }
+        const { name, surname, email, password, phone } = payload;
+        return new Promise((resolve, reject) => {
+            const params = new URLSearchParams();
+            params.append("func", "addUser");
+            params.append("name", name);
+            params.append("surname", surname);
+            params.append("email", email);
+            params.append("password", password);
+            params.append("phone", phone);
+            axios.post(requestUrls.users, params).then(response => {
+                resolve(response.data == "TRUE");
+            }).catch(error => { reject(error) })
+        });
+    },
+
+
+toTitleCase(str) {
+    return !str ? "" : str
+      .toLocaleLowerCase("tr-TR")
+      .replace(/(?:^|\s|,|;|!|:|-|\.|\?)[a-z0-9ğçşüöı]/g, function (match) {
+        return match.toLocaleUpperCase("tr-TR");
+      });
+  },
+
+
+// Loading
+this.$vs.loading();
+this.$vs.loading.close();
+
+
+// MYSQL SUM sonucu String dönüyor, onu int e çevirmek için 
+CAST(SUM(case when user_id > 0 then 1 else 0 end) AS UNSIGNED) AS participant_count 
+
+
+
