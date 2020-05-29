@@ -7,3 +7,6 @@
 
 
 [High Level Design Report](https://drive.google.com/file/d/1hm6yy70AKvlgwJ1y0g5RUIqgFQPnUP4M/view?usp=sharing)
+
+
+[Final Report]https://drive.google.com/file/d/1yDBNqPVU6gvGeXYAjUdlv8GBDBfPBLFH/view?usp=sharing
