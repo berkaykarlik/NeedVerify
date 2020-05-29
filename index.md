@@ -4,7 +4,7 @@
 
 [Project Analysis Report](https://drive.google.com/file/d/1SpI9ZcwPAnHrklnjbwkems6sSHBqDHik/view?usp=sharing)
 
-
+[Low Level Design Report](https://drive.google.com/file/d/1--v8JUKEqH9_W6xdga_VzNy-bq1WSW7w/view?usp=sharing)
 
 [High Level Design Report](https://drive.google.com/file/d/1hm6yy70AKvlgwJ1y0g5RUIqgFQPnUP4M/view?usp=sharing)
 
